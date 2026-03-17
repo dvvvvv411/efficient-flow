@@ -153,7 +153,7 @@ export const stellen: Stelle[] = [
       'Praktische Erfahrung in echten Kundenprojekten',
       'Mentoring durch erfahrene Berater und Entwickler',
       'Übernahmemöglichkeit nach dem Studium',
-      'Modernes Büro in München oder Remote-Arbeit',
+      'Modernes Büro in Düsseldorf oder Remote-Arbeit',
     ],
   },
 ];
