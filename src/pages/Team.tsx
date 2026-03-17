@@ -92,8 +92,8 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Unser"
         highlight="Team"

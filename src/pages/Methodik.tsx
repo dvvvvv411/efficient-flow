@@ -91,8 +91,8 @@ const Methodik = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Unsere"
         highlight="Methodik"

@@ -17,8 +17,8 @@ const Karriere = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Karriere bei"
         highlight="EfficientFlow"

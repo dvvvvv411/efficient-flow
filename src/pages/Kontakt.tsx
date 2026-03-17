@@ -59,8 +59,8 @@ const Kontakt = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Kontaktieren"
         highlight="Sie uns"

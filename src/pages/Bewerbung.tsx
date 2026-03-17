@@ -42,8 +42,8 @@ const Bewerbung = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Deine"
         highlight="Bewerbung"

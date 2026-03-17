@@ -44,7 +44,7 @@ const Index = () => {
       <FAQ />
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

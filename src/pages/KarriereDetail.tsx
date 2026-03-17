@@ -20,8 +20,8 @@ const KarriereDetail = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title={stelle.titel}
         subtitle={stelle.kurzbeschreibung}

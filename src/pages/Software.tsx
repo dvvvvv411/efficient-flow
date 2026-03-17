@@ -86,8 +86,8 @@ const Software = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Maßgeschneiderte"
         highlight="Software-Lösungen"
