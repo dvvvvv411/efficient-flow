@@ -7,27 +7,11 @@ const painPoints = [
   'Verlorenes Wissen?', 'Kein Überblick?', 'Skalierungsprobleme?',
 ];
 
-const scrollingText = 'Zu viele Tools. Zu viele Tabellen. Zu viele manuelle Schritte. Zu wenig Überblick. ';
-
 const ProblemSolution = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section ref={ref} className="py-24 md:py-32 overflow-hidden">
-      {/* Scrolling text marquee */}
-      <div className="mb-16 overflow-hidden">
-        <div className="flex animate-scroll-text whitespace-nowrap">
-          {[0, 1, 2, 3].map((i) => (
-            <span
-              key={i}
-              className="text-6xl md:text-8xl font-extrabold text-foreground/[0.04] tracking-tight shrink-0 select-none"
-            >
-              {scrollingText}
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div className="max-w-4xl mx-auto px-6">
         <div className={`text-center mb-12 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Das Problem</p>

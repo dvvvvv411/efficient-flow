@@ -1,10 +1,10 @@
 import { useScrollAnimation, useCounterAnimation } from '@/hooks/useScrollAnimation';
 
 const stats = [
-  { value: 50, suffix: '+', label: 'Abgeschlossene Projekte' },
-  { value: 30, suffix: '+', label: 'Zufriedene Kunden' },
-  { value: 40, suffix: '%', label: 'Ø Effizienzsteigerung' },
-  { value: 3, suffix: '+', label: 'Jahre Erfahrung' },
+  { value: 150, suffix: '+', label: 'Abgeschlossene Projekte' },
+  { value: 80, suffix: '+', label: 'Zufriedene Kunden' },
+  { value: 47, suffix: '%', label: 'Ø Effizienzsteigerung' },
+  { value: 5, suffix: '+', label: 'Jahre Erfahrung' },
 ];
 
 const StatItem = ({ value, suffix, label, isVisible }: { value: number; suffix: string; label: string; isVisible: boolean }) => {

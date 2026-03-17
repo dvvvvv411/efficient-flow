@@ -1,8 +1,8 @@
-import { ArrowRight, Sparkles, Send } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-10 overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-10 overflow-hidden hero-gradient">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-primary/[0.07] blur-[100px] animate-orb" />
@@ -21,8 +21,8 @@ const HeroSection = () => {
 
         {/* Headline */}
         <h1 className="hero-animate hero-animate-2 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] mb-6">
-          Effizienz.{' '}
-          <span className="text-gradient-blue">Digitalisiert.</span>
+          Wir machen Unternehmen{' '}
+          <span className="text-gradient-blue">schneller.</span>
         </h1>
 
         {/* Subtext */}
@@ -32,30 +32,20 @@ const HeroSection = () => {
           in echten Wettbewerbsvorteil verwandelt.
         </p>
 
-        {/* Email CTA */}
-        <div className="hero-animate hero-animate-4 flex flex-col items-center gap-4">
-          <div className="flex w-full max-w-md mx-auto">
-            <div className="relative flex-1">
-              <input
-                type="email"
-                placeholder="Ihre E-Mail-Adresse"
-                className="w-full h-13 pl-5 pr-4 rounded-l-full border border-border border-r-0 bg-white/90 backdrop-blur-sm text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
-              />
-            </div>
-            <a
-              href="mailto:info@efficientflow.de"
-              className="inline-flex items-center gap-2 px-6 h-13 rounded-r-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-200 shrink-0"
-            >
-              Loslegen
-              <Send size={15} />
-            </a>
-          </div>
+        {/* CTA Buttons */}
+        <div className="hero-animate hero-animate-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#kontakt"
+            className="inline-flex items-center gap-2 px-8 h-13 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-200"
+          >
+            Projekt starten
+            <ArrowRight size={16} />
+          </a>
           <a
             href="#leistungen"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 px-8 h-13 rounded-full border border-border bg-white/80 backdrop-blur-sm text-foreground font-semibold text-sm hover:bg-white hover:border-primary/30 transition-all duration-200"
           >
-            Oder zuerst Leistungen entdecken
-            <ArrowRight size={14} />
+            Leistungen entdecken
           </a>
         </div>
 
