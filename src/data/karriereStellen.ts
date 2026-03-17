@@ -130,7 +130,7 @@ export const stellen: Stelle[] = [
   {
     slug: 'werkstudent-digitalisierung',
     titel: 'Werkstudent:in Digitalisierung',
-    standort: 'München',
+    standort: 'Düsseldorf',
     modell: 'Hybrid',
     kurzbeschreibung: 'Unterstütze unser Team bei spannenden Digitalisierungsprojekten und sammle Praxiserfahrung.',
     beschreibung: 'Als Werkstudent:in im Bereich Digitalisierung unterstützt du unser Team bei der Umsetzung von Kundenprojekten. Du bekommst Einblick in Beratung, Softwareentwicklung und Projektmanagement — ideal für den Berufseinstieg.',
