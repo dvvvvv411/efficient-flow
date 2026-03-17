@@ -12,24 +12,35 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
 
   return (
-    <div className="relative z-50 px-4 pt-6">
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-6">
       <div className="max-w-5xl mx-auto flex items-center gap-4">
         {/* Logo: freistehend */}
         <Link to="/" className="shrink-0">
-          <img src={logo} alt="EfficientFlow" className="h-10 w-auto hover:scale-105 transition-transform duration-200 will-change-transform" />
+          <img src={logo} alt="EfficientFlow" className="h-10 hover:scale-105 transition-transform duration-200" />
         </Link>
 
         {/* Nav pill */}
         <nav
-          className="flex-1 rounded-full border px-8 h-16 flex items-center justify-between bg-white/60 backdrop-blur-md border-border/40 shadow-sm"
+          className={`flex-1 transition-all duration-500 rounded-full border px-8 h-16 flex items-center justify-between ${
+            scrolled
+              ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
+              : 'bg-white/60 backdrop-blur-md border-border/40 shadow-sm'
+          }`}
         >
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
