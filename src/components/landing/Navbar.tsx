@@ -70,7 +70,7 @@ const Navbar = () => {
             <div className="ml-8 pl-6">
               <Link
                 to="/kontakt"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors whitespace-nowrap"
               >
                 Projekt starten
                 <ArrowRight size={15} />
