@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Send } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -23,20 +24,13 @@ const CTASection = () => {
           optimieren und Ihr Unternehmen digitalisieren können.
         </p>
         <div className={`scroll-hidden delay-2 ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="flex w-full max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              className="flex-1 h-13 pl-5 pr-4 rounded-l-full border-0 bg-white/20 backdrop-blur-sm text-sm text-primary-foreground placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
-            />
-            <a
-              href="mailto:info@efficientflow.de"
-              className="inline-flex items-center gap-2 px-6 h-13 rounded-r-full bg-white text-foreground font-semibold text-sm hover:bg-white/90 transition-all duration-200 shrink-0"
-            >
-              Loslegen
-              <Send size={15} />
-            </a>
-          </div>
+          <Link
+            to="/kontakt"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-foreground font-semibold text-base hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Kontakt aufnehmen
+            <ArrowRight size={18} />
+          </Link>
         </div>
         <p className={`scroll-hidden delay-3 ${isVisible ? 'scroll-visible' : ''} mt-6 text-sm text-white/60`}>
           Keine Verpflichtung. Kein Risiko. Nur Ergebnisse.
