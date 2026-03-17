@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'E-Mail',
-    value: 'info@efficientflow.solutions',
-    href: 'mailto:info@efficientflow.solutions',
+    value: 'info@efficient-flow.solutions',
+    href: 'mailto:info@efficient-flow.solutions',
   },
   {
     icon: MapPin,
