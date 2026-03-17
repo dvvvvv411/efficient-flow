@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '@/assets/logo.png';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 const navLinks = [
@@ -35,13 +36,8 @@ const Navbar = () => {
         }`}
       >
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">EF</span>
-          </div>
-          <span className="font-bold text-foreground text-base tracking-tight">
-            Efficient<span className="text-gradient-blue">Flow</span>
-          </span>
+        <Link to="/" className="flex items-center shrink-0">
+          <img src={logo} alt="EfficientFlow" className="h-7" />
         </Link>
 
         {/* Desktop Links */}
