@@ -79,27 +79,24 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile header bar */}
-          <div className={`md:hidden flex-1 flex items-center justify-between rounded-full border px-4 h-14 transition-all duration-500 ${
-            scrolled
-              ? 'bg-background/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
-              : 'bg-background/60 backdrop-blur-md border-border/40 shadow-sm'
-          }`}>
-            {/* Hamburger left */}
+          <div className="md:hidden flex-1 flex items-center">
+            {/* Hamburger in eigener Pille */}
             <button
-              className="p-1.5 text-foreground"
+              className={`p-2.5 rounded-full border transition-all duration-500 ${
+                scrolled
+                  ? 'bg-background/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
+                  : 'bg-background/60 backdrop-blur-md border-border/40 shadow-sm'
+              } text-foreground`}
               onClick={() => setMobileOpen(true)}
               aria-label="Menü öffnen"
             >
               <Menu size={22} />
             </button>
 
-            {/* Logo centered */}
+            {/* Logo zentriert, transparent */}
             <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-              <img src={logo} alt="EfficientFlow" loading="eager" fetchPriority="high" className="h-8" />
+              <img src={logo} alt="EfficientFlow" loading="eager" fetchPriority="high" className="h-8 hover:scale-105 transition-transform duration-200" />
             </Link>
-
-            {/* Spacer for symmetry */}
-            <div className="w-[34px]" />
           </div>
         </div>
       </div>
