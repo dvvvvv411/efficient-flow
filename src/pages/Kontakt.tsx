@@ -6,25 +6,19 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const contactInfo = [
   {
-    icon: Phone,
-    label: 'Telefon',
-    value: '+49 (0) 123 456 789',
-    href: 'tel:+49123456789',
-  },
-  {
     icon: Mail,
     label: 'E-Mail',
-    value: 'info@efficientflow.de',
-    href: 'mailto:info@efficientflow.de',
+    value: 'info@efficientflow.solutions',
+    href: 'mailto:info@efficientflow.solutions',
   },
   {
     icon: MapPin,
     label: 'Adresse',
-    value: 'Musterstraße 42, 80331 München',
+    value: 'Marc-Chagall-Str. 142, 40477 Düsseldorf',
     href: '#',
   },
   {

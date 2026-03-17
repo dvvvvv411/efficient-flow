@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Github } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const Footer = () => {
@@ -15,14 +14,6 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Beratung, Digitalisierung und Software für Unternehmen, die bereit sind, effizienter zu arbeiten.
             </p>
-            <div className="flex items-center gap-3">
-              <a href="#" className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors">
-                <Linkedin size={16} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors">
-                <Github size={16} />
-              </a>
-            </div>
           </div>
 
           {/* Navigation */}
@@ -50,22 +41,23 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4">Kontakt</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:info@efficientflow.de" className="hover:text-foreground transition-colors">
-                  info@efficientflow.de
+                <a href="mailto:info@efficientflow.solutions" className="hover:text-foreground transition-colors">
+                  info@efficientflow.solutions
                 </a>
               </li>
-              <li>Deutschland</li>
+              <li>Marc-Chagall-Str. 142</li>
+              <li>40477 Düsseldorf, Deutschland</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Efficient Flow Solutions. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} Efficient Flow Solutions GmbH. Alle Rechte vorbehalten.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Impressum</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Datenschutz</a>
+            <Link to="/impressum" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Datenschutz</Link>
           </div>
         </div>
       </div>
