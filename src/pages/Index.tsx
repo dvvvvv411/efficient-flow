@@ -13,6 +13,7 @@ import Footer from '@/components/landing/Footer';
 
 const Index = () => {
   useEffect(() => {
+    document.title = 'EfficientFlow – Beratung, Digitalisierung & Software';
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
