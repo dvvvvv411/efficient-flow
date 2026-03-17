@@ -12,6 +12,7 @@ import Kontakt from "./pages/Kontakt.tsx";
 import Karriere from "./pages/Karriere.tsx";
 import KarriereDetail from "./pages/KarriereDetail.tsx";
 import Bewerbung from "./pages/Bewerbung.tsx";
+import Team from "./pages/Team.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
