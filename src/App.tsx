@@ -35,6 +35,8 @@ const App = () => (
             <Route path="/methodik" element={<Methodik />} />
             <Route path="/team" element={<Team />} />
             <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/karriere" element={<Karriere />} />
             <Route path="/karriere/bewerbung" element={<Bewerbung />} />
             <Route path="/karriere/:slug" element={<KarriereDetail />} />
