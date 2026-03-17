@@ -44,7 +44,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'senior-software-engineer',
-    titel: 'Senior Software Engineer',
+    titel: 'Mitarbeiter (m/w/d) für Softwareentwicklung',
     standort: 'Düsseldorf',
     modell: 'Remote',
     kurzbeschreibung: 'Entwickle skalierbare Full-Stack-Lösungen mit React und Node.js für unsere Kunden.',
@@ -73,7 +73,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'ux-ui-designer',
-    titel: 'UX/UI Designer:in',
+    titel: 'Mitarbeiter (m/w/d) für UX/UI Design',
     standort: 'Düsseldorf',
     modell: 'Remote',
     kurzbeschreibung: 'Gestalte intuitive Benutzeroberflächen und entwickle nutzerzentrierte Designkonzepte.',
@@ -102,7 +102,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'devops-engineer',
-    titel: 'DevOps Engineer',
+    titel: 'Mitarbeiter (m/w/d) für DevOps & Cloud-Infrastruktur',
     standort: 'Düsseldorf',
     modell: 'Remote',
     kurzbeschreibung: 'Baue und optimiere unsere Cloud-Infrastruktur und CI/CD-Pipelines.',
@@ -131,7 +131,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'werkstudent-digitalisierung',
-    titel: 'Werkstudent:in Digitalisierung',
+    titel: 'Werkstudent (m/w/d) im Bereich Digitalisierung',
     standort: 'Düsseldorf',
     modell: 'Hybrid',
     kurzbeschreibung: 'Unterstütze unser Team bei spannenden Digitalisierungsprojekten und sammle Praxiserfahrung.',
