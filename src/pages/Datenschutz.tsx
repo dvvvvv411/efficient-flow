@@ -5,8 +5,7 @@ const Datenschutz = () => {
   return (
     <>
       <PageHero
-        title="Datenschutz"
-        highlight="erklärung"
+        title="Datenschutzerklärung"
         subtitle=""
         breadcrumb={[
           { label: 'Home', href: '/' },
