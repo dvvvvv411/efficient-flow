@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="max-w-5xl mx-auto flex items-center gap-4">
         {/* Logo: freistehend */}
         <Link to="/" className="shrink-0">
-          <img src={logo} alt="EfficientFlow" className="h-10 hover:scale-105 transition-transform duration-200" />
+          <img src={logo} alt="EfficientFlow" className="h-10 w-auto hover:scale-105 transition-transform duration-200" style={{ imageRendering: 'auto', backfaceVisibility: 'hidden' }} />
         </Link>
 
         {/* Nav pill */}
