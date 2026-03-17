@@ -37,6 +37,7 @@ const Footer = () => {
                 { label: 'Leistungen', href: '/leistungen' },
                 { label: 'Software', href: '/software' },
                 { label: 'Methodik', href: '/methodik' },
+                { label: 'Karriere', href: '/karriere' },
                 { label: 'Kontakt', href: '/kontakt' },
               ].map((link) => (
                 <li key={link.href}>
