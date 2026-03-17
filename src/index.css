@@ -111,6 +111,11 @@
 .scroll-hidden.delay-6 { transition-delay: 480ms; }
 
 /* Hero load animations (not scroll-based) */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes hero-fade-up {
   0% { opacity: 0; transform: translateY(30px); filter: blur(4px); }
   100% { opacity: 1; transform: translateY(0); filter: blur(0); }

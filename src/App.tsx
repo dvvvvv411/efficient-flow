@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
+import CookieBanner from "@/components/CookieBanner";
 import SiteLayout from "@/components/layout/SiteLayout";
 import Index from "./pages/Index.tsx";
 import Leistungen from "./pages/Leistungen.tsx";
