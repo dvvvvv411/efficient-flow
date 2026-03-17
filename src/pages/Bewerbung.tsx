@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Upload, Send } from 'lucide-react';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
