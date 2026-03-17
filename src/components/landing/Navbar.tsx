@@ -39,8 +39,8 @@ const Navbar = () => {
         <div className="max-w-5xl mx-auto flex items-center gap-4">
           {/* Logo: fixed size to prevent layout shift */}
           {/* Desktop: logo left */}
-          <Link to="/" className="shrink-0 hidden md:block w-[120px] h-10">
-            <img src={logo} alt="EfficientFlow" className="h-10 w-auto hover:scale-105 transition-transform duration-200" />
+          <Link to="/" className="shrink-0 hidden md:block h-10">
+            <img src={logo} alt="EfficientFlow" className="h-10 w-auto object-contain hover:scale-105 transition-transform duration-200" />
           </Link>
 
           {/* Desktop Nav pill */}
