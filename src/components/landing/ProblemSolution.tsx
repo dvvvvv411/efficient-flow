@@ -1,59 +1,54 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { AlertTriangle, ArrowRight, CheckCircle } from 'lucide-react';
 
-const rows = [
-  {
-    problem: 'Legacy-Systeme bremsen Ihr Wachstum',
-    solution: 'Moderne digitale Infrastruktur, die mit Ihnen skaliert',
-  },
-  {
-    problem: 'Manuelle Prozesse verschwenden wertvolle Ressourcen',
-    solution: 'Intelligente Automatisierung von Workflows',
-  },
-  {
-    problem: 'Datensilos verhindern fundierte Entscheidungen',
-    solution: 'Integrierte Plattformen für volle Transparenz',
-  },
+const painPoints = [
+  'Legacy-Systeme?', 'Excel-Chaos?', 'Manuelle Prozesse?',
+  'Datensilos?', 'Keine Transparenz?', 'Verpasste Deadlines?',
+  'Hohe Fehlerquoten?', 'Langsame Freigaben?', 'Zu viele Tools?',
+  'Verlorenes Wissen?', 'Kein Überblick?', 'Skalierungsprobleme?',
 ];
+
+const scrollingText = 'Zu viele Tools. Zu viele Tabellen. Zu viele manuelle Schritte. Zu wenig Überblick. ';
 
 const ProblemSolution = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-24 md:py-32">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className={`text-center mb-16 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-            Problem erkannt. <span className="text-gradient-blue">Lösung geliefert.</span>
+    <section ref={ref} className="py-24 md:py-32 overflow-hidden">
+      {/* Scrolling text marquee */}
+      <div className="mb-16 overflow-hidden">
+        <div className="flex animate-scroll-text whitespace-nowrap">
+          {[0, 1, 2, 3].map((i) => (
+            <span
+              key={i}
+              className="text-6xl md:text-8xl font-extrabold text-foreground/[0.04] tracking-tight shrink-0 select-none"
+            >
+              {scrollingText}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6">
+        <div className={`text-center mb-12 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Das Problem</p>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+            Das sollte <span className="text-gradient-blue">2026 nicht mehr</span> passieren.
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Wir identifizieren Engpässe und verwandeln sie in Wettbewerbsvorteile.
+            Wenn Ihnen davon etwas bekannt vorkommt, sind Sie nicht allein — aber es gibt eine Lösung.
           </p>
         </div>
 
-        <div className="space-y-6">
-          {rows.map((row, i) => (
-            <div
-              key={i}
-              className={`scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''} grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-center`}
+        {/* Pain point tags */}
+        <div className={`scroll-hidden delay-2 ${isVisible ? 'scroll-visible' : ''} flex flex-wrap justify-center gap-3`}>
+          {painPoints.map((point, i) => (
+            <span
+              key={point}
+              className="px-5 py-2.5 rounded-full border border-destructive/15 bg-destructive/[0.04] text-sm font-medium text-foreground/70 hover:border-destructive/30 hover:bg-destructive/[0.08] transition-all duration-300 cursor-default"
+              style={{ animationDelay: `${i * 40}ms` }}
             >
-              {/* Problem */}
-              <div className="flex items-start gap-4 p-6 rounded-2xl bg-red-50/60 border border-red-100/60">
-                <AlertTriangle size={20} className="text-red-400 mt-0.5 shrink-0" />
-                <p className="text-sm font-medium text-foreground/80">{row.problem}</p>
-              </div>
-
-              {/* Arrow */}
-              <div className="hidden md:flex items-center justify-center">
-                <ArrowRight size={20} className="text-primary" />
-              </div>
-
-              {/* Solution */}
-              <div className="flex items-start gap-4 p-6 rounded-2xl bg-accent border border-primary/10">
-                <CheckCircle size={20} className="text-primary mt-0.5 shrink-0" />
-                <p className="text-sm font-medium text-foreground/80">{row.solution}</p>
-              </div>
-            </div>
+              {point}
+            </span>
           ))}
         </div>
       </div>

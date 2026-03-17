@@ -1,21 +1,31 @@
+import { Linkedin, Github } from 'lucide-react';
+
 const Footer = () => {
   return (
-    <footer className="border-t border-border/50 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="border-t border-border/50 bg-muted/20">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Logo + Tagline */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-7 h-7 rounded-lg bg-gradient-blue flex items-center justify-center">
-                <span className="text-white font-bold text-xs">EF</span>
+                <span className="text-primary-foreground font-bold text-xs">EF</span>
               </div>
               <span className="font-bold text-foreground tracking-tight">
                 Efficient<span className="text-gradient-blue">Flow</span>
               </span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Beratung, Digitalisierung und Software für Unternehmen, die bereit sind, effizienter zu arbeiten.
             </p>
+            <div className="flex items-center gap-3">
+              <a href="#" className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors">
+                <Linkedin size={16} />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors">
+                <Github size={16} />
+              </a>
+            </div>
           </div>
 
           {/* Navigation */}
@@ -41,13 +51,17 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-sm mb-4">Kontakt</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li>info@efficientflow.de</li>
+              <li>
+                <a href="mailto:info@efficientflow.de" className="hover:text-foreground transition-colors">
+                  info@efficientflow.de
+                </a>
+              </li>
               <li>Deutschland</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Efficient Flow Solutions. Alle Rechte vorbehalten.
           </p>

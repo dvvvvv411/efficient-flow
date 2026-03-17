@@ -1,66 +1,76 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Send } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 overflow-hidden">
-      {/* Background gradient orbs */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-10 overflow-hidden hero-gradient">
+      {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl animate-orb" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[hsl(199_89%_48%/0.05)] blur-3xl animate-orb-delayed" />
-        <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] rounded-full bg-primary/3 blur-3xl animate-orb" />
+        <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-primary/[0.07] blur-[100px] animate-orb" />
+        <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[hsl(199_89%_48%/0.06)] blur-[100px] animate-orb-delayed" />
+        <div className="absolute bottom-[10%] left-[40%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[80px] animate-orb" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Badge */}
-        <div
-          className="scroll-hidden inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-white/80 backdrop-blur-sm shadow-sm mb-8"
-          style={{ animationDelay: '0ms' }}
-        >
+        <div className="hero-animate hero-animate-1 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/[0.06] backdrop-blur-sm mb-8">
           <Sparkles size={14} className="text-primary" />
-          <span className="text-xs font-semibold text-muted-foreground tracking-wide uppercase">
+          <span className="text-xs font-semibold text-primary tracking-wide">
             Beratung & Software für 2026
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="scroll-hidden delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.05] mb-6">
+        <h1 className="hero-animate hero-animate-2 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] mb-6">
           Effizienz.{' '}
           <span className="text-gradient-blue">Digitalisiert.</span>
         </h1>
 
         {/* Subtext */}
-        <p className="scroll-hidden delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="hero-animate hero-animate-3 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           Wir beraten Unternehmen in Effizienzsteigerung, Digitalisierung und
           Prozessoptimierung — und entwickeln die Software, die Ihre Prozesse
           in echten Wettbewerbsvorteil verwandelt.
         </p>
 
-        {/* CTAs */}
-        <div className="scroll-hidden delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#kontakt"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-blue text-white font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Projekt starten
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+        {/* Email CTA */}
+        <div className="hero-animate hero-animate-4 flex flex-col items-center gap-4">
+          <div className="flex w-full max-w-md mx-auto">
+            <div className="relative flex-1">
+              <input
+                type="email"
+                placeholder="Ihre E-Mail-Adresse"
+                className="w-full h-13 pl-5 pr-4 rounded-l-full border border-border border-r-0 bg-white/90 backdrop-blur-sm text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
+              />
+            </div>
+            <a
+              href="mailto:info@efficientflow.de"
+              className="inline-flex items-center gap-2 px-6 h-13 rounded-r-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-200 shrink-0"
+            >
+              Loslegen
+              <Send size={15} />
+            </a>
+          </div>
           <a
             href="#leistungen"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border bg-white/80 backdrop-blur-sm text-foreground font-semibold hover:bg-accent hover:border-primary/20 transition-all duration-200"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Leistungen entdecken
+            Oder zuerst Leistungen entdecken
+            <ArrowRight size={14} />
           </a>
         </div>
 
         {/* Dashboard Mockup */}
-        <div className="scroll-hidden delay-4 mt-16 md:mt-20 relative">
-          <div className="relative mx-auto max-w-4xl rounded-2xl border border-border/60 bg-white shadow-2xl shadow-primary/10 overflow-hidden animate-float-slow">
+        <div className="hero-animate hero-animate-5 mt-16 md:mt-20 relative">
+          {/* Glow behind mockup */}
+          <div className="absolute -inset-10 bg-primary/[0.06] blur-[60px] rounded-full" />
+          
+          <div className="relative mx-auto max-w-4xl rounded-2xl border border-border/60 bg-white shadow-2xl shadow-primary/[0.08] overflow-hidden animate-float-slow" style={{ perspective: '1000px' }}>
             {/* Browser bar */}
             <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border/50">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <div className="w-3 h-3 rounded-full bg-green-400" />
+                <div className="w-3 h-3 rounded-full bg-[hsl(0_84%_60%/0.6)]" />
+                <div className="w-3 h-3 rounded-full bg-[hsl(45_93%_47%/0.6)]" />
+                <div className="w-3 h-3 rounded-full bg-[hsl(142_71%_45%/0.6)]" />
               </div>
               <div className="flex-1 mx-4">
                 <div className="h-6 rounded-md bg-background border border-border/50 flex items-center px-3">
@@ -70,7 +80,7 @@ const HeroSection = () => {
             </div>
 
             {/* Dashboard content */}
-            <div className="p-6 grid grid-cols-12 gap-4 min-h-[300px] md:min-h-[360px]">
+            <div className="p-6 grid grid-cols-12 gap-4 min-h-[280px] md:min-h-[340px]">
               {/* Sidebar */}
               <div className="col-span-3 hidden md:flex flex-col gap-3">
                 <div className="h-8 rounded-lg bg-primary/10 flex items-center px-3">
@@ -87,12 +97,11 @@ const HeroSection = () => {
 
               {/* Main */}
               <div className="col-span-12 md:col-span-9 flex flex-col gap-4">
-                {/* KPI Row */}
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { label: 'Effizienz', value: '+42%', color: 'bg-green-500/10 text-green-600' },
-                    { label: 'Prozesse', value: '128', color: 'bg-primary/10 text-primary' },
-                    { label: 'Einsparung', value: '€340k', color: 'bg-purple-500/10 text-purple-600' },
+                    { label: 'Effizienz', value: '+42%', color: 'text-[hsl(142_71%_35%)]' },
+                    { label: 'Prozesse', value: '128', color: 'text-primary' },
+                    { label: 'Einsparung', value: '€340k', color: 'text-[hsl(270_60%_50%)]' },
                   ].map((kpi) => (
                     <div key={kpi.label} className="rounded-xl border border-border/40 bg-white p-4">
                       <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">{kpi.label}</p>
@@ -101,7 +110,6 @@ const HeroSection = () => {
                   ))}
                 </div>
 
-                {/* Chart area */}
                 <div className="flex-1 rounded-xl border border-border/40 bg-white p-4">
                   <div className="flex items-center justify-between mb-4">
                     <div className="h-3 w-32 rounded bg-foreground/10" />
@@ -112,16 +120,13 @@ const HeroSection = () => {
                   </div>
                   <div className="flex items-end gap-2 h-32">
                     {[40, 65, 45, 80, 55, 90, 70, 95, 60, 85, 75, 92].map((h, i) => (
-                      <div key={i} className="flex-1 rounded-t-md bg-gradient-blue opacity-70" style={{ height: `${h}%` }} />
+                      <div key={i} className="flex-1 rounded-t-md bg-gradient-blue opacity-60" style={{ height: `${h}%` }} />
                     ))}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Subtle shadow below mockup */}
-          <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 bg-primary/5 blur-3xl rounded-full" />
         </div>
       </div>
 
