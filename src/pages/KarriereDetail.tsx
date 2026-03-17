@@ -100,6 +100,17 @@ const KarriereDetail = () => {
                       <p className="text-sm font-medium text-foreground">{stelle.modell}</p>
                     </div>
                   </div>
+                  {stelle.arbeitszeit && (
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <Timer size={16} className="text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Arbeitszeit</p>
+                        <p className="text-sm font-medium text-foreground">{stelle.arbeitszeit}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Contact */}
