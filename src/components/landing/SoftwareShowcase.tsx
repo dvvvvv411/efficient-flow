@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const SoftwareShowcase = () => {
