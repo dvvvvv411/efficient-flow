@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Sparkles, LayoutDashboard, GitBranch, BarChart3, FolderKanban, Settings, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 
 const sidebarItems = [
