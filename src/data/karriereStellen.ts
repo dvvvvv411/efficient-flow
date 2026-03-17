@@ -8,6 +8,7 @@ export interface Stelle {
   aufgaben: string[];
   voraussetzungen: string[];
   benefits: string[];
+  arbeitszeit?: string;
 }
 
 export const stellen: Stelle[] = [
