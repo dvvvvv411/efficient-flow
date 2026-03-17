@@ -147,8 +147,8 @@ const HeroSection = () => {
     <section className="relative flex flex-col items-center justify-center pt-32 pb-16 lg:pt-0 lg:min-h-[calc(100vh-140px)] lg:pb-0 overflow-hidden hero-gradient">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-primary/[0.07] blur-[100px] animate-orb" />
-        <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[hsl(199_89%_48%/0.06)] blur-[100px] animate-orb-delayed" />
+        <div className="absolute top-[20%] left-[15%] w-[600px] h-[600px] rounded-full bg-primary/[0.07] blur-[100px] animate-orb" />
+        <div className="absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full bg-[hsl(199_89%_48%/0.06)] blur-[100px] animate-orb-delayed" />
         <div className="absolute bottom-[10%] left-[40%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[80px] animate-orb" />
       </div>
 
