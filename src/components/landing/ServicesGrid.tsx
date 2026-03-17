@@ -215,7 +215,7 @@ const ServicesGrid = () => {
               >
                 <div className="grid md:grid-cols-[1fr_1fr] gap-0">
                   {/* Text side */}
-                  <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <div className="p-5 sm:p-8 md:p-10 flex flex-col justify-center">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-11 h-11 rounded-xl bg-gradient-blue flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <Icon size={20} className="text-primary-foreground" />

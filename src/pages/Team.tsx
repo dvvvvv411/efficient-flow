@@ -118,7 +118,7 @@ const Team = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-5">
+              <div className="p-4 sm:p-5">
                 <h3 className="text-sm font-bold text-foreground">{member.name}</h3>
                 <p className="text-xs font-semibold text-primary mt-0.5">{member.role}</p>
                 <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{member.description}</p>

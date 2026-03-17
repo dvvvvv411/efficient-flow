@@ -27,82 +27,144 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location.pathname]);
 
-  return (
-    <div className="absolute top-0 left-0 right-0 z-50 px-4 pt-6">
-      <div className="max-w-5xl mx-auto flex items-center gap-4">
-        {/* Logo: freistehend */}
-        <Link to="/" className="shrink-0">
-          <img src={logo} alt="EfficientFlow" className="h-10 hover:scale-105 transition-transform duration-200" />
-        </Link>
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
 
-        {/* Nav pill */}
-        <nav
-          className={`flex-1 transition-all duration-500 rounded-full border px-8 h-16 flex items-center justify-between ${
+  return (
+    <>
+      <div className="absolute top-0 left-0 right-0 z-50 px-4 pt-6">
+        <div className="max-w-5xl mx-auto flex items-center gap-4">
+          {/* Logo: fixed size to prevent layout shift */}
+          {/* Desktop: logo left */}
+          <Link to="/" className="shrink-0 hidden md:block w-[120px] h-10">
+            <img src={logo} alt="EfficientFlow" className="h-10 w-auto hover:scale-105 transition-transform duration-200" />
+          </Link>
+
+          {/* Desktop Nav pill */}
+          <nav
+            className={`hidden md:flex flex-1 transition-all duration-500 rounded-full border px-8 h-16 items-center justify-between ${
+              scrolled
+                ? 'bg-background/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
+                : 'bg-background/60 backdrop-blur-md border-border/40 shadow-sm'
+            }`}
+          >
+            <div className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-sm font-medium transition-colors ${
+                    location.pathname === link.href
+                      ? 'text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="ml-8 pl-6">
+              <Link
+                to="/kontakt"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors"
+              >
+                Projekt starten
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+          </nav>
+
+          {/* Mobile header bar */}
+          <div className={`md:hidden flex-1 flex items-center justify-between rounded-full border px-4 h-14 transition-all duration-500 ${
             scrolled
-              ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
-              : 'bg-white/60 backdrop-blur-md border-border/40 shadow-sm'
+              ? 'bg-background/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
+              : 'bg-background/60 backdrop-blur-md border-border/40 shadow-sm'
+          }`}>
+            {/* Hamburger left */}
+            <button
+              className="p-1.5 text-foreground"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Menü öffnen"
+            >
+              <Menu size={22} />
+            </button>
+
+            {/* Logo centered */}
+            <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+              <img src={logo} alt="EfficientFlow" className="h-8" />
+            </Link>
+
+            {/* Spacer for symmetry */}
+            <div className="w-[34px]" />
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Fullscreen Sidebar Overlay */}
+      <div
+        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
+          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Backdrop */}
+        <div className="absolute inset-0 bg-foreground/20 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
+
+        {/* Sidebar panel */}
+        <div
+          className={`absolute inset-y-0 left-0 w-[85%] max-w-[320px] bg-background shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
+            mobileOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Header */}
+          <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border/40">
+            <Link to="/" onClick={() => setMobileOpen(false)}>
+              <img src={logo} alt="EfficientFlow" className="h-8" />
+            </Link>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Menü schließen"
+            >
+              <X size={22} />
+            </button>
+          </div>
+
+          {/* Nav Links */}
+          <nav className="flex-1 flex flex-col justify-center px-6 gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors ${
+                onClick={() => setMobileOpen(false)}
+                className={`py-3.5 text-lg font-semibold transition-colors ${
                   location.pathname === link.href
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'text-primary'
+                    : 'text-foreground hover:text-primary'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-          </div>
+          </nav>
 
           {/* CTA */}
-          <div className="hidden md:block ml-auto">
+          <div className="px-6 pb-8">
             <Link
               to="/kontakt"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-base"
             >
               Projekt starten
-              <ArrowRight size={15} />
+              <ArrowRight size={16} />
             </Link>
           </div>
-
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden p-1.5 text-foreground ml-auto"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </nav>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden max-w-5xl mx-auto mt-2 rounded-2xl bg-white/95 backdrop-blur-xl border border-border shadow-xl px-6 pb-5 pt-3">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className="block py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-border/30 last:border-0"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            to="/kontakt"
-            className="mt-3 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold"
-          >
-            Projekt starten
-            <ArrowRight size={14} />
-          </Link>
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 

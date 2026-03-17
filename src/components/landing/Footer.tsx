@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border/50 bg-muted/20">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 sm:py-14">
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
           {/* Logo + Tagline */}
           <div>
             <Link to="/" className="flex items-center mb-3">

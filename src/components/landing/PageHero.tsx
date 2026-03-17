@@ -34,7 +34,7 @@ const PageHero = ({ title, highlight, subtitle, breadcrumb }: PageHeroProps) => 
           ))}
         </nav>
 
-        <h1 className="hero-animate hero-animate-1 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+        <h1 className="hero-animate hero-animate-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
           {title}{' '}
           {highlight && <span className="text-gradient-blue">{highlight}</span>}
         </h1>
