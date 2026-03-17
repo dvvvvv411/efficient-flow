@@ -46,6 +46,11 @@ const Impressum = () => {
               info@efficient-flow.com
             </a>
             <br />
+            Telefon:{' '}
+            <a href="tel:+4921187971940" className="text-primary hover:underline">
+              0211-87971940
+            </a>
+            <br />
             Website:{' '}
             <a href="https://efficient-flow.solutions" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
               efficient-flow.solutions

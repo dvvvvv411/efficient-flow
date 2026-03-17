@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const Footer = () => {
@@ -63,6 +63,12 @@ const Footer = () => {
                 <a href="mailto:info@efficient-flow.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Mail className="h-4 w-4 text-primary/70 shrink-0" />
                   info@efficient-flow.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+4921187971940" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Phone className="h-4 w-4 text-primary/70 shrink-0" />
+                  0211-87971940
                 </a>
               </li>
               <li className="flex items-start gap-2">

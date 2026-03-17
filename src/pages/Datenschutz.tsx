@@ -25,6 +25,11 @@ const Datenschutz = () => {
             <a href="mailto:info@efficient-flow.com" className="text-primary hover:underline">
               info@efficient-flow.com
             </a>
+            <br />
+            Telefon:{' '}
+            <a href="tel:+4921187971940" className="text-primary hover:underline">
+              0211-87971940
+            </a>
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">2. Erhebung und Speicherung personenbezogener Daten</h2>

@@ -6,7 +6,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -14,6 +14,12 @@ const contactInfo = [
     label: 'E-Mail',
     value: 'info@efficient-flow.com',
     href: 'mailto:info@efficient-flow.com',
+  },
+  {
+    icon: Phone,
+    label: 'Telefon',
+    value: '0211-87971940',
+    href: 'tel:+4921187971940',
   },
   {
     icon: MapPin,
