@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Linkedin, Github } from 'lucide-react';
 
 const Footer = () => {
@@ -7,14 +8,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10">
           {/* Logo + Tagline */}
           <div>
-            <div className="flex items-center gap-2 mb-3">
+            <Link to="/" className="flex items-center gap-2 mb-3">
               <div className="w-7 h-7 rounded-lg bg-gradient-blue flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-xs">EF</span>
               </div>
               <span className="font-bold text-foreground tracking-tight">
                 Efficient<span className="text-gradient-blue">Flow</span>
               </span>
-            </div>
+            </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Beratung, Digitalisierung und Software für Unternehmen, die bereit sind, effizienter zu arbeiten.
             </p>
@@ -33,15 +34,15 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {[
-                { label: 'Leistungen', href: '#leistungen' },
-                { label: 'Software', href: '#software' },
-                { label: 'Methodik', href: '#methodik' },
-                { label: 'Kontakt', href: '#kontakt' },
+                { label: 'Leistungen', href: '/leistungen' },
+                { label: 'Software', href: '/software' },
+                { label: 'Methodik', href: '/methodik' },
+                { label: 'Kontakt', href: '/kontakt' },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
