@@ -54,10 +54,10 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a
             href="#kontakt"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background text-[13px] font-semibold hover:bg-foreground/90 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors"
           >
             Projekt starten
-            <ArrowRight size={14} />
+            <ArrowRight size={15} />
           </a>
         </div>
 
