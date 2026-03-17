@@ -73,7 +73,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-border/50 bg-muted/30 -mx-5 sm:-mx-6 px-5 sm:px-6 -mb-16 sm:-mb-20 pb-8 rounded-b-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+      </div>
+
+      <div className="border-t border-border/50 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Efficient Flow Solutions GmbH. Alle Rechte vorbehalten.
           </p>
