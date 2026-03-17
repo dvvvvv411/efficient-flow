@@ -160,7 +160,7 @@ const HeroSection = () => {
             <span className="text-xs font-semibold text-primary tracking-wide">Beratung & Software für 2026</span>
           </div>
 
-          <h1 className="hero-animate hero-animate-2 text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight leading-[1.08] mb-6">
+          <h1 className="hero-animate hero-animate-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight leading-[1.08] mb-6">
             Wir digitalisieren,{' '}
             <span className="text-gradient-blue">was Sie bremst.</span>
           </h1>
