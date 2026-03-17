@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Link } from 'react-router-dom';
 import { Lightbulb, Monitor, Code2, Cog, ArrowRight } from 'lucide-react';
 
 const services = [
