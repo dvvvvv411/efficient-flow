@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { MapPin, Clock, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
+import { MapPin, Clock, Timer, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
 
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
