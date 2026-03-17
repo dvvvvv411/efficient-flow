@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
@@ -92,8 +92,8 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Unser"
         highlight="Team"
@@ -130,7 +130,7 @@ const Team = () => {
 
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

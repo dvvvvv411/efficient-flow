@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Upload, Send } from 'lucide-react';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -42,8 +42,8 @@ const Bewerbung = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Deine"
         highlight="Bewerbung"
@@ -156,7 +156,7 @@ const Bewerbung = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
+import SiteLayout from "@/components/layout/SiteLayout";
 import Index from "./pages/Index.tsx";
 import Leistungen from "./pages/Leistungen.tsx";
 import Software from "./pages/Software.tsx";
@@ -25,16 +26,17 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/leistungen" element={<Leistungen />} />
-          <Route path="/software" element={<Software />} />
-          <Route path="/methodik" element={<Methodik />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/kontakt" element={<Kontakt />} />
-          <Route path="/karriere" element={<Karriere />} />
-          <Route path="/karriere/bewerbung" element={<Bewerbung />} />
-          <Route path="/karriere/:slug" element={<KarriereDetail />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route element={<SiteLayout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/leistungen" element={<Leistungen />} />
+            <Route path="/software" element={<Software />} />
+            <Route path="/methodik" element={<Methodik />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/karriere" element={<Karriere />} />
+            <Route path="/karriere/bewerbung" element={<Bewerbung />} />
+            <Route path="/karriere/:slug" element={<KarriereDetail />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

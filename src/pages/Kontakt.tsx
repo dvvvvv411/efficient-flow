@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -59,8 +59,8 @@ const Kontakt = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Kontaktieren"
         highlight="Sie uns"
@@ -183,7 +183,7 @@ const Kontakt = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Navbar from '@/components/landing/Navbar';
 import HeroSection from '@/components/landing/HeroSection';
 import TrustBar from '@/components/landing/TrustBar';
 import ProblemSolution from '@/components/landing/ProblemSolution';
@@ -33,8 +32,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
       <HeroSection />
       <TrustBar />
       <ProblemSolution />
@@ -46,7 +44,7 @@ const Index = () => {
       <FAQ />
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

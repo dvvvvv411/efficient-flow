@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { MapPin, Clock, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -20,8 +20,8 @@ const KarriereDetail = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title={stelle.titel}
         subtitle={stelle.kurzbeschreibung}
@@ -123,7 +123,7 @@ const KarriereDetail = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

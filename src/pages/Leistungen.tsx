@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
@@ -95,8 +95,8 @@ const Leistungen = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+
       <PageHero
         title="Unsere"
         highlight="Leistungen"
@@ -161,7 +161,7 @@ const Leistungen = () => {
 
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 
