@@ -16,6 +16,12 @@ const contactInfo = [
     href: 'mailto:info@efficient-flow.com',
   },
   {
+    icon: Phone,
+    label: 'Telefon',
+    value: '0211-87971940',
+    href: 'tel:+4921187971940',
+  },
+  {
     icon: MapPin,
     label: 'Adresse',
     value: 'Marc-Chagall-Str. 142, 40477 Düsseldorf',
