@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo + Tagline */}
           <div>
             <Link to="/" className="flex items-center mb-3">
-              <img src={logo} alt="EfficientFlow" className="h-6" />
+              <img src={logo} alt="EfficientFlow" className="h-8 hover:scale-105 transition-transform duration-200" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Beratung, Digitalisierung und Software für Unternehmen, die bereit sind, effizienter zu arbeiten.
