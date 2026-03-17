@@ -30,6 +30,9 @@ const Bewerbung = () => {
     nachname: '',
     email: '',
     telefon: '',
+    strasse: '',
+    plz: '',
+    stadt: '',
     stelle: preselected,
     anstellungsart: '',
     lebenslauf: null as File | null,
@@ -47,7 +50,7 @@ const Bewerbung = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!form.vorname.trim() || !form.nachname.trim() || !form.email.trim() || !form.telefon.trim() || !form.anstellungsart) {
+    if (!form.vorname.trim() || !form.nachname.trim() || !form.email.trim() || !form.telefon.trim() || !form.strasse.trim() || !form.plz.trim() || !form.stadt.trim() || !form.anstellungsart) {
       toast({ title: 'Bitte alle Pflichtfelder ausfüllen.', variant: 'destructive' });
       return;
     }
@@ -70,7 +73,7 @@ const Bewerbung = () => {
 
       if (data.success) {
         toast({ title: 'Bewerbung erfolgreich gesendet!', description: 'Wir melden uns bei dir.' });
-        setForm({ vorname: '', nachname: '', email: '', telefon: '', stelle: '', anstellungsart: '', lebenslauf: null });
+        setForm({ vorname: '', nachname: '', email: '', telefon: '', strasse: '', plz: '', stadt: '', stelle: '', anstellungsart: '', lebenslauf: null });
       } else {
         throw new Error(data.error || 'Unbekannter Fehler');
       }
@@ -156,6 +159,22 @@ const Bewerbung = () => {
                 <div className="space-y-2">
                   <Label htmlFor="telefon">Telefon *</Label>
                   <Input id="telefon" name="telefon" type="tel" placeholder="+49 123 456 789" value={form.telefon} onChange={handleChange} className="rounded-xl" />
+                </div>
+              </div>
+
+              {/* Adresse */}
+              <div className="space-y-2">
+                <Label htmlFor="strasse">Straße + Hausnummer *</Label>
+                <Input id="strasse" name="strasse" placeholder="Musterstraße 1" value={form.strasse} onChange={handleChange} className="rounded-xl" />
+              </div>
+              <div className="grid grid-cols-[120px_1fr] gap-5">
+                <div className="space-y-2">
+                  <Label htmlFor="plz">PLZ *</Label>
+                  <Input id="plz" name="plz" placeholder="12345" value={form.plz} onChange={handleChange} className="rounded-xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="stadt">Stadt *</Label>
+                  <Input id="stadt" name="stadt" placeholder="Musterstadt" value={form.stadt} onChange={handleChange} className="rounded-xl" />
                 </div>
               </div>
 
