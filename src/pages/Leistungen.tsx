@@ -86,6 +86,7 @@ const Leistungen = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   useEffect(() => {
+    document.title = 'Leistungen | EfficientFlow';
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('scroll-visible')),
       { threshold: 0.1 }
