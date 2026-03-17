@@ -50,7 +50,7 @@ const Bewerbung = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!form.vorname.trim() || !form.nachname.trim() || !form.email.trim() || !form.telefon.trim() || !form.anstellungsart) {
+    if (!form.vorname.trim() || !form.nachname.trim() || !form.email.trim() || !form.telefon.trim() || !form.strasse.trim() || !form.plz.trim() || !form.stadt.trim() || !form.anstellungsart) {
       toast({ title: 'Bitte alle Pflichtfelder ausfüllen.', variant: 'destructive' });
       return;
     }
