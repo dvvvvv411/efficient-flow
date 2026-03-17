@@ -22,8 +22,8 @@ const Datenschutz = () => {
             Marc-Chagall-Str. 142<br />
             40477 Düsseldorf<br />
             E-Mail:{' '}
-            <a href="mailto:info@efficient-flow.solutions" className="text-primary hover:underline">
-              info@efficient-flow.solutions
+            <a href="mailto:info@efficient-flow.com" className="text-primary hover:underline">
+              info@efficient-flow.com
             </a>
           </p>
 
