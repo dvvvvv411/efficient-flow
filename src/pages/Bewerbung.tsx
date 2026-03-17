@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Upload, Send } from 'lucide-react';
+import { Upload, Send, Loader2 } from 'lucide-react';
 
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
@@ -15,6 +15,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { stellen } from '@/data/karriereStellen';
+import { toast } from '@/hooks/use-toast';
+
+const BRANDING_ID = 'e4f832ef-4f72-4fa3-983e-07b678a698a1';
+const API_URL = 'https://luorlnagxpsibarcygjm.supabase.co/functions/v1/submit-application';
 
 const Bewerbung = () => {
   const [searchParams] = useSearchParams();
@@ -26,12 +30,11 @@ const Bewerbung = () => {
     nachname: '',
     email: '',
     telefon: '',
-    strasse: '',
-    plz: '',
-    stadt: '',
     stelle: preselected,
+    anstellungsart: '',
     lebenslauf: null as File | null,
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -41,9 +44,45 @@ const Bewerbung = () => {
     setForm({ ...form, lebenslauf: e.target.files?.[0] || null });
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.vorname.trim() || !form.nachname.trim() || !form.email.trim() || !form.telefon.trim() || !form.anstellungsart) {
+      toast({ title: 'Bitte alle Pflichtfelder ausfüllen.', variant: 'destructive' });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const formData = new FormData();
+      formData.append('first_name', form.vorname.trim());
+      formData.append('last_name', form.nachname.trim());
+      formData.append('email', form.email.trim());
+      formData.append('phone', form.telefon.trim());
+      formData.append('employment_type', form.anstellungsart);
+      formData.append('branding_id', BRANDING_ID);
+      if (form.lebenslauf) {
+        formData.append('resume', form.lebenslauf);
+      }
+
+      const res = await fetch(API_URL, { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (data.success) {
+        toast({ title: 'Bewerbung erfolgreich gesendet!', description: 'Wir melden uns bei dir.' });
+        setForm({ vorname: '', nachname: '', email: '', telefon: '', stelle: '', anstellungsart: '', lebenslauf: null });
+      } else {
+        throw new Error(data.error || 'Unbekannter Fehler');
+      }
+    } catch (err: any) {
+      toast({ title: 'Fehler beim Senden', description: err.message || 'Bitte versuche es erneut.', variant: 'destructive' });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
-
       <PageHero
         title="Deine"
         highlight="Bewerbung"
@@ -63,10 +102,10 @@ const Bewerbung = () => {
               Felder mit * sind Pflichtfelder.
             </p>
 
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
-              {/* Stelle */}
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Stelle (UI only) */}
               <div className="space-y-2">
-                <Label htmlFor="stelle">Stelle *</Label>
+                <Label htmlFor="stelle">Stelle</Label>
                 <Select value={form.stelle} onValueChange={(v) => setForm({ ...form, stelle: v })}>
                   <SelectTrigger className="rounded-xl">
                     <SelectValue placeholder="Stelle auswählen" />
@@ -77,6 +116,21 @@ const Bewerbung = () => {
                         {s.titel}
                       </SelectItem>
                     ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Anstellungsart */}
+              <div className="space-y-2">
+                <Label htmlFor="anstellungsart">Anstellungsart *</Label>
+                <Select value={form.anstellungsart} onValueChange={(v) => setForm({ ...form, anstellungsart: v })}>
+                  <SelectTrigger className="rounded-xl">
+                    <SelectValue placeholder="Anstellungsart wählen" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="minijob">Minijob</SelectItem>
+                    <SelectItem value="teilzeit">Teilzeit</SelectItem>
+                    <SelectItem value="vollzeit">Vollzeit</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -105,23 +159,6 @@ const Bewerbung = () => {
                 </div>
               </div>
 
-              {/* Address */}
-              <div className="space-y-2">
-                <Label htmlFor="strasse">Straße & Hausnummer *</Label>
-                <Input id="strasse" name="strasse" placeholder="Musterstraße 42" value={form.strasse} onChange={handleChange} className="rounded-xl" />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <Label htmlFor="plz">PLZ *</Label>
-                  <Input id="plz" name="plz" placeholder="80331" value={form.plz} onChange={handleChange} className="rounded-xl" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="stadt">Stadt *</Label>
-                  <Input id="stadt" name="stadt" placeholder="München" value={form.stadt} onChange={handleChange} className="rounded-xl" />
-                </div>
-              </div>
-
               {/* File upload */}
               <div className="space-y-2">
                 <Label htmlFor="lebenslauf">Lebenslauf</Label>
@@ -145,10 +182,20 @@ const Bewerbung = () => {
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-200"
+                disabled={submitting}
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
               >
-                Bewerbung absenden
-                <Send size={16} />
+                {submitting ? (
+                  <>
+                    Wird gesendet…
+                    <Loader2 size={16} className="animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Bewerbung absenden
+                    <Send size={16} />
+                  </>
+                )}
               </button>
             </form>
           </div>
