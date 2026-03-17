@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Leistungen', href: '/leistungen' },
   { label: 'Software', href: '/software' },
   { label: 'Methodik', href: '/methodik' },
+  { label: 'Team', href: '/team' },
   { label: 'Karriere', href: '/karriere' },
   { label: 'Kontakt', href: '/kontakt' },
 ];
