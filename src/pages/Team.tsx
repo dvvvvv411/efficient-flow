@@ -105,24 +105,22 @@ const Team = () => {
       />
 
       <section ref={ref} className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {teamMembers.map((member, i) => (
             <div
               key={member.name}
-              className={`scroll-hidden delay-${Math.min(i % 4 + 1, 4)} ${isVisible ? 'scroll-visible' : ''} group rounded-2xl border border-border/60 bg-white overflow-hidden hover:shadow-lg hover:shadow-primary/[0.05] hover:border-primary/20 transition-all duration-300`}
+              className={`scroll-hidden delay-${Math.min(i % 4 + 1, 4)} ${isVisible ? 'scroll-visible' : ''} group flex flex-col items-center text-center p-5 rounded-2xl border border-border/60 bg-card hover:shadow-lg hover:shadow-primary/[0.05] hover:border-primary/20 transition-all duration-300`}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="w-20 h-20 rounded-full overflow-hidden ring-2 ring-border/40 group-hover:ring-primary/30 transition-all duration-300 mb-3">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="p-4 sm:p-5">
-                <h3 className="text-sm font-bold text-foreground">{member.name}</h3>
-                <p className="text-xs font-semibold text-primary mt-0.5">{member.role}</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{member.description}</p>
-              </div>
+              <h3 className="text-sm font-bold text-foreground leading-tight">{member.name}</h3>
+              <p className="text-xs font-semibold text-primary mt-0.5">{member.role}</p>
+              <p className="text-[11px] text-muted-foreground mt-2 leading-relaxed line-clamp-3">{member.description}</p>
             </div>
           ))}
         </div>
