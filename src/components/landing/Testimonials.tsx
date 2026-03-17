@@ -1,24 +1,24 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'EfficientFlow hat unsere internen Abläufe komplett transformiert. Die Effizienzsteigerung von über 35% hat unsere Erwartungen übertroffen.',
-    name: 'Stefan Müller',
+    quote: 'EfficientFlow hat unsere Kommunikationsinfrastruktur grundlegend digitalisiert und die internen Prozesse so optimiert, dass wir deutlich schneller und effizienter agieren können.',
+    name: 'Peter Kurt Nowack',
     role: 'CEO',
-    company: 'TechVentures GmbH',
+    company: 'Gamma Placetel GmbH',
   },
   {
-    quote: 'Die Kombination aus strategischer Beratung und maßgeschneiderter Software ist einzigartig. Endlich ein Partner, der beides versteht.',
-    name: 'Laura Schmidt',
-    role: 'Head of Operations',
-    company: 'DataCore AG',
+    quote: 'Dank der strategischen Beratung und technischen Umsetzung konnten wir unsere Plattform skalieren und die Logistikprozesse nachhaltig verbessern — ein echter Wettbewerbsvorteil.',
+    name: 'Lennard Neubauer',
+    role: 'CEO',
+    company: 'yourdelivery GmbH',
   },
   {
-    quote: 'Vom ersten Gespräch bis zum Go-Live — professionell, transparent und immer auf Augenhöhe. Klare Empfehlung.',
-    name: 'Michael Weber',
-    role: 'CTO',
-    company: 'NovaSystems',
+    quote: 'Die digitale Transformation unserer Geschäftsprozesse wurde professionell begleitet. Die messbare Effizienzsteigerung bestätigt die Qualität der Zusammenarbeit.',
+    name: 'Dr. Maximilian Bode',
+    role: 'CEO',
+    company: 'Vorwerk Deutschland Stiftung & Co. KG',
   },
 ];
 
@@ -45,16 +45,14 @@ const Testimonials = () => {
               <p className="text-sm text-foreground/80 leading-relaxed mb-6">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-blue flex items-center justify-center">
-                  <span className="text-primary-foreground text-xs font-bold">
-                    {t.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}, {t.company}</p>
-                </div>
+              <div className="flex gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, idx) => (
+                  <Star key={idx} size={16} className="text-yellow-400" fill="currentColor" />
+                ))}
+              </div>
+              <div>
+                <p className="text-sm font-semibold">{t.name}</p>
+                <p className="text-xs text-muted-foreground">{t.role}, {t.company}</p>
               </div>
             </div>
           ))}
