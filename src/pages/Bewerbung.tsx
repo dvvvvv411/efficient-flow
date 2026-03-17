@@ -73,7 +73,7 @@ const Bewerbung = () => {
 
       if (data.success) {
         toast({ title: 'Bewerbung erfolgreich gesendet!', description: 'Wir melden uns bei dir.' });
-        setForm({ vorname: '', nachname: '', email: '', telefon: '', stelle: '', anstellungsart: '', lebenslauf: null });
+        setForm({ vorname: '', nachname: '', email: '', telefon: '', strasse: '', plz: '', stadt: '', stelle: '', anstellungsart: '', lebenslauf: null });
       } else {
         throw new Error(data.error || 'Unbekannter Fehler');
       }
