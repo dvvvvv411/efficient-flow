@@ -73,7 +73,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'ux-ui-designer',
-    titel: 'UX/UI Designer:in',
+    titel: 'Mitarbeiter (m/w/d) für UX/UI Design',
     standort: 'Düsseldorf',
     modell: 'Remote',
     kurzbeschreibung: 'Gestalte intuitive Benutzeroberflächen und entwickle nutzerzentrierte Designkonzepte.',
