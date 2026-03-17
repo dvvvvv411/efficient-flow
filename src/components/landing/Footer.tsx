@@ -60,9 +60,9 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4 text-foreground">Kontakt</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:info@efficient-flow.solutions" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <a href="mailto:info@efficient-flow.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Mail className="h-4 w-4 text-primary/70 shrink-0" />
-                  info@efficient-flow.solutions
+                  info@efficient-flow.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
