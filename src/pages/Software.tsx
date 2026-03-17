@@ -180,7 +180,7 @@ const Software = () => {
 
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

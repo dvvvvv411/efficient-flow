@@ -123,7 +123,7 @@ const KarriereDetail = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

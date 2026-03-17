@@ -156,7 +156,7 @@ const Bewerbung = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

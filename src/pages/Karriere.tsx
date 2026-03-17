@@ -70,7 +70,7 @@ const Karriere = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

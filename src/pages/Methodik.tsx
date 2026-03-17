@@ -179,7 +179,7 @@ const Methodik = () => {
 
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

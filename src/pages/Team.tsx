@@ -130,7 +130,7 @@ const Team = () => {
 
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

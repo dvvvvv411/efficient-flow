@@ -161,7 +161,7 @@ const Leistungen = () => {
 
       <CTASection />
       <Footer />
-    </div>
+    </>
   );
 };
 

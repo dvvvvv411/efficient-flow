@@ -95,7 +95,7 @@ const Navbar = () => {
 
             {/* Logo centered */}
             <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-              <img src={logo} alt="EfficientFlow" className="h-8" />
+              <img src={logo} alt="EfficientFlow" loading="eager" fetchPriority="high" className="h-8" />
             </Link>
 
             {/* Spacer for symmetry */}
