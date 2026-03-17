@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <nav
-        className={`max-w-4xl mx-auto transition-all duration-500 rounded-full border px-6 h-14 flex items-center justify-between ${
+        className={`max-w-5xl mx-auto transition-all duration-500 rounded-full border px-8 h-16 flex items-center justify-between ${
           scrolled
             ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
             : 'bg-white/60 backdrop-blur-md border-border/40 shadow-sm'
