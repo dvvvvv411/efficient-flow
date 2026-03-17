@@ -42,8 +42,8 @@ const Impressum = () => {
           <h3 className="text-lg font-bold mt-8 mb-3">Kontakt</h3>
           <p>
             E-Mail:{' '}
-            <a href="mailto:info@efficient-flow.solutions" className="text-primary hover:underline">
-              info@efficient-flow.solutions
+            <a href="mailto:info@efficient-flow.com" className="text-primary hover:underline">
+              info@efficient-flow.com
             </a>
             <br />
             Website:{' '}
