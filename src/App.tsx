@@ -10,6 +10,8 @@ import Leistungen from "./pages/Leistungen.tsx";
 import Software from "./pages/Software.tsx";
 import Methodik from "./pages/Methodik.tsx";
 import Kontakt from "./pages/Kontakt.tsx";
+import Impressum from "./pages/Impressum.tsx";
+import Datenschutz from "./pages/Datenschutz.tsx";
 import Karriere from "./pages/Karriere.tsx";
 import KarriereDetail from "./pages/KarriereDetail.tsx";
 import Bewerbung from "./pages/Bewerbung.tsx";
