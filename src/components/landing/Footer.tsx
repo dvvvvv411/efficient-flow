@@ -9,13 +9,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10">
           {/* Logo + Tagline */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-gradient-blue flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xs">EF</span>
-              </div>
-              <span className="font-bold text-foreground tracking-tight">
-                Efficient<span className="text-gradient-blue">Flow</span>
-              </span>
+            <Link to="/" className="flex items-center mb-3">
+              <img src={logo} alt="EfficientFlow" className="h-6" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Beratung, Digitalisierung und Software für Unternehmen, die bereit sind, effizienter zu arbeiten.
