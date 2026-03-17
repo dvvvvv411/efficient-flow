@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
-import Navbar from '@/components/landing/Navbar';
+
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
 import { stellen } from '@/data/karriereStellen';
