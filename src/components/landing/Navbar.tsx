@@ -1,22 +1,28 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Leistungen', href: '#leistungen' },
-  { label: 'Software', href: '#software' },
-  { label: 'Methodik', href: '#methodik' },
-  { label: 'Kontakt', href: '#kontakt' },
+  { label: 'Leistungen', href: '/leistungen' },
+  { label: 'Software', href: '/software' },
+  { label: 'Methodik', href: '/methodik' },
+  { label: 'Kontakt', href: '/kontakt' },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-6">
@@ -28,37 +34,41 @@ const Navbar = () => {
         }`}
       >
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">EF</span>
           </div>
           <span className="font-bold text-foreground text-base tracking-tight">
             Efficient<span className="text-gradient-blue">Flow</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              to={link.href}
+              className={`text-sm font-medium transition-colors ${
+                location.pathname === link.href
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
         <div className="hidden md:block">
-          <a
-            href="#kontakt"
+          <Link
+            to="/kontakt"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors"
           >
             Projekt starten
             <ArrowRight size={15} />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -74,23 +84,21 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden max-w-5xl mx-auto mt-2 rounded-2xl bg-white/95 backdrop-blur-xl border border-border shadow-xl px-6 pb-5 pt-3">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
+              to={link.href}
               className="block py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-border/30 last:border-0"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#kontakt"
-            onClick={() => setMobileOpen(false)}
+          <Link
+            to="/kontakt"
             className="mt-3 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold"
           >
             Projekt starten
             <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
       )}
     </div>

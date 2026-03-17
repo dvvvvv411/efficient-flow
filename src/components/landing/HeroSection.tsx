@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Sparkles, LayoutDashboard, GitBranch, BarChart3, FolderKanban, Settings, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
 
 const sidebarItems = [
@@ -171,20 +172,20 @@ const HeroSection = () => {
           </p>
 
           <div className="hero-animate hero-animate-4 flex flex-col sm:flex-row items-start gap-4">
-            <a
-              href="#kontakt"
+            <Link
+              to="/kontakt"
               className="inline-flex items-center gap-2.5 px-10 h-14 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-base shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.03] transition-all duration-200"
             >
               Projekt starten
               <ArrowRight size={18} />
-            </a>
-            <a
-              href="#leistungen"
+            </Link>
+            <Link
+              to="/leistungen"
               className="inline-flex items-center gap-2 px-10 h-14 rounded-full border border-border bg-background/80 backdrop-blur-sm text-foreground font-semibold text-base hover:bg-background hover:border-primary/40 transition-all duration-200"
             >
               Leistungen entdecken
               <ChevronRight size={18} className="text-muted-foreground" />
-            </a>
+            </Link>
           </div>
         </div>
 
