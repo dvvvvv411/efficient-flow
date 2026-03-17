@@ -160,8 +160,8 @@ const HeroSection = () => {
           </div>
 
           <h1 className="hero-animate hero-animate-2 text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight leading-[1.08] mb-6">
-            Prozesse, die sich{' '}
-            <span className="text-gradient-blue">selbst optimieren.</span>
+            Wir digitalisieren,{' '}
+            <span className="text-gradient-blue">was Sie bremst.</span>
           </h1>
 
           <p className="hero-animate hero-animate-3 text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
