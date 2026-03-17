@@ -33,7 +33,7 @@ const TrustBar = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-14 border-y border-border/40 overflow-hidden">
+    <section ref={ref} className="py-8 border-y border-border/40 overflow-hidden">
       <p className={`text-center text-xs font-medium text-muted-foreground uppercase tracking-[0.2em] mb-8 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
         Modernste Tech-Stacks für maximale Performance und Sicherheit
       </p>
