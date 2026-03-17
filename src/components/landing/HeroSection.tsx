@@ -143,7 +143,7 @@ const HeroSection = () => {
   const current = tabContent[activeTab];
 
   return (
-    <section className="relative flex flex-col items-center justify-center pt-48 pb-16 lg:min-h-[calc(100vh-120px)] lg:pb-0 overflow-hidden hero-gradient">
+    <section className="relative flex flex-col items-center justify-center pt-32 pb-16 lg:pt-0 lg:min-h-[calc(100vh-140px)] lg:pb-0 overflow-hidden hero-gradient">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-primary/[0.07] blur-[100px] animate-orb" />

@@ -34,17 +34,19 @@ const TrustBar = () => {
 
   return (
     <section ref={ref} className="py-8 border-y border-border/40 overflow-hidden">
-      <p className={`text-center text-xs font-medium text-muted-foreground uppercase tracking-[0.2em] mb-8 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-        Modernste Tech-Stacks für maximale Performance und Sicherheit
-      </p>
-      <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
-        
-        <div className="flex animate-marquee">
-          {[...techStack, ...techStack].map((item, i) => (
-            <LogoItem key={`${item.name}-${i}`} name={item.name} icon={item.icon} />
-          ))}
+      <div className="max-w-7xl mx-auto px-6">
+        <p className={`text-center text-xs font-medium text-muted-foreground uppercase tracking-[0.2em] mb-8 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+          Modernste Tech-Stacks für maximale Performance und Sicherheit
+        </p>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+          
+          <div className="flex animate-marquee">
+            {[...techStack, ...techStack].map((item, i) => (
+              <LogoItem key={`${item.name}-${i}`} name={item.name} icon={item.icon} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
