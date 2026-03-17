@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <nav
-        className={`max-w-4xl mx-auto transition-all duration-500 rounded-full border px-6 h-14 flex items-center justify-between ${
+        className={`max-w-5xl mx-auto transition-all duration-500 rounded-full border px-8 h-16 flex items-center justify-between ${
           scrolled
             ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-foreground/5 border-border/80'
             : 'bg-white/60 backdrop-blur-md border-border/40 shadow-sm'
@@ -29,21 +29,21 @@ const Navbar = () => {
       >
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 shrink-0">
-          <div className="w-7 h-7 rounded-lg bg-gradient-blue flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-xs">EF</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center">
+            <span className="text-primary-foreground font-bold text-sm">EF</span>
           </div>
-          <span className="font-bold text-foreground text-sm tracking-tight">
+          <span className="font-bold text-foreground text-base tracking-tight">
             Efficient<span className="text-gradient-blue">Flow</span>
           </span>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
@@ -54,10 +54,10 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a
             href="#kontakt"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background text-[13px] font-semibold hover:bg-foreground/90 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 transition-colors"
           >
             Projekt starten
-            <ArrowRight size={14} />
+            <ArrowRight size={15} />
           </a>
         </div>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden max-w-4xl mx-auto mt-2 rounded-2xl bg-white/95 backdrop-blur-xl border border-border shadow-xl px-6 pb-5 pt-3">
+        <div className="md:hidden max-w-5xl mx-auto mt-2 rounded-2xl bg-white/95 backdrop-blur-xl border border-border shadow-xl px-6 pb-5 pt-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
