@@ -27,7 +27,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-6">
+    <div className="relative z-50 px-4 pt-6">
       <div className="max-w-5xl mx-auto flex items-center gap-4">
         {/* Logo: freistehend */}
         <Link to="/" className="shrink-0">
