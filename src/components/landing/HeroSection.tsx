@@ -160,7 +160,7 @@ const HeroSection = () => {
             <span className="text-xs font-semibold text-primary tracking-wide">Beratung & Software für 2026</span>
           </div>
 
-          <h1 className="hero-animate hero-animate-2 text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight leading-[1.08] mb-6">
+          <h1 className="hero-animate hero-animate-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight leading-[1.08] mb-6">
             Wir digitalisieren,{' '}
             <span className="text-gradient-blue">was Sie bremst.</span>
           </h1>
@@ -171,17 +171,17 @@ const HeroSection = () => {
             in echten Wettbewerbsvorteil verwandelt.
           </p>
 
-          <div className="hero-animate hero-animate-4 flex flex-col sm:flex-row items-start gap-4">
+          <div className="hero-animate hero-animate-4 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
             <Link
               to="/kontakt"
-              className="inline-flex items-center gap-2.5 px-10 h-14 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-base shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.03] transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2.5 px-10 h-14 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-base shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.03] transition-all duration-200"
             >
               Projekt starten
               <ArrowRight size={18} />
             </Link>
             <Link
               to="/leistungen"
-              className="inline-flex items-center gap-2 px-10 h-14 rounded-full border border-border bg-background/80 backdrop-blur-sm text-foreground font-semibold text-base hover:bg-background hover:border-primary/40 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-10 h-14 rounded-full border border-border bg-background/80 backdrop-blur-sm text-foreground font-semibold text-base hover:bg-background hover:border-primary/40 transition-all duration-200"
             >
               Leistungen entdecken
               <ChevronRight size={18} className="text-muted-foreground" />
