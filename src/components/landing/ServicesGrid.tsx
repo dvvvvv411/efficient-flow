@@ -234,10 +234,10 @@ const ServicesGrid = () => {
                         </span>
                       ))}
                     </div>
-                    <a href="#kontakt" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline group/link">
+                    <Link to="/kontakt" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline group/link">
                       Mehr erfahren
                       <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Visual side - unique per service */}

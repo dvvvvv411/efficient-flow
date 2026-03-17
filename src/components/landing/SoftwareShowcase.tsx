@@ -33,13 +33,13 @@ const SoftwareShowcase = () => {
                 </li>
               ))}
             </ul>
-            <a
-              href="#kontakt"
+            <Link
+              to="/kontakt"
               className={`scroll-hidden delay-4 ${isVisible ? 'scroll-visible' : ''} group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline`}
             >
               Projekt besprechen
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
 
           {/* Mockup */}
