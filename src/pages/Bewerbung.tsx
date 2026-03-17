@@ -162,6 +162,22 @@ const Bewerbung = () => {
                 </div>
               </div>
 
+              {/* Adresse */}
+              <div className="space-y-2">
+                <Label htmlFor="strasse">Straße + Hausnummer *</Label>
+                <Input id="strasse" name="strasse" placeholder="Musterstraße 1" value={form.strasse} onChange={handleChange} className="rounded-xl" />
+              </div>
+              <div className="grid grid-cols-[120px_1fr] gap-5">
+                <div className="space-y-2">
+                  <Label htmlFor="plz">PLZ *</Label>
+                  <Input id="plz" name="plz" placeholder="12345" value={form.plz} onChange={handleChange} className="rounded-xl" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="stadt">Stadt *</Label>
+                  <Input id="stadt" name="stadt" placeholder="Musterstadt" value={form.stadt} onChange={handleChange} className="rounded-xl" />
+                </div>
+              </div>
+
               {/* File upload */}
               <div className="space-y-2">
                 <Label htmlFor="lebenslauf">Lebenslauf</Label>
