@@ -26,11 +26,11 @@ const Methodology = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="methodik" ref={ref} className="py-24 md:py-32 bg-gradient-blue-section">
+    <section id="methodik" ref={ref} className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
         <div className={`text-center mb-16 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Methodik</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
             Drei Schritte. <span className="text-gradient-blue">Volle Wirkung.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -40,7 +40,7 @@ const Methodology = () => {
 
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-px bg-border" />
+          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-px bg-border/60" />
 
           {steps.map((step, i) => {
             const Icon = step.icon;
@@ -49,12 +49,11 @@ const Methodology = () => {
                 key={step.number}
                 className={`scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''} relative text-center`}
               >
-                {/* Number + Icon */}
                 <div className="relative inline-flex flex-col items-center mb-6">
                   <div className="w-16 h-16 rounded-2xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg shadow-primary/10 relative z-10">
                     <Icon size={28} className="text-primary" />
                   </div>
-                  <span className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-gradient-blue text-white text-xs font-bold flex items-center justify-center z-20">
+                  <span className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-gradient-blue text-primary-foreground text-xs font-bold flex items-center justify-center z-20">
                     {step.number}
                   </span>
                 </div>
