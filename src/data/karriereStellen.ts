@@ -44,7 +44,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'senior-software-engineer',
-    titel: 'Senior Software Engineer',
+    titel: 'Mitarbeiter (m/w/d) für Softwareentwicklung',
     standort: 'Düsseldorf',
     modell: 'Remote',
     kurzbeschreibung: 'Entwickle skalierbare Full-Stack-Lösungen mit React und Node.js für unsere Kunden.',
