@@ -73,92 +73,90 @@ const Kontakt = () => {
 
       <section ref={ref} className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="flex flex-col lg:flex-row gap-8">
             {/* Form */}
-            <div className={`lg:col-span-3 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-              <div className="rounded-2xl border border-border/60 bg-white p-8 md:p-10">
-                <h2 className="text-2xl font-extrabold tracking-tight mb-2">Nachricht senden</h2>
-                <p className="text-sm text-muted-foreground mb-8">
-                  Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
-                </p>
+            <div className={`flex-1 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+              <h2 className="text-2xl font-extrabold tracking-tight mb-2">Nachricht senden</h2>
+              <p className="text-sm text-muted-foreground mb-8">
+                Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
+              </p>
 
-                <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
-                  <div className="grid md:grid-cols-2 gap-5">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Max Mustermann"
-                        value={form.name}
-                        onChange={handleChange}
-                        className="rounded-xl"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">E-Mail *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="max@beispiel.de"
-                        value={form.email}
-                        onChange={handleChange}
-                        className="rounded-xl"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-5">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Telefon</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+49 123 456 789"
-                        value={form.phone}
-                        onChange={handleChange}
-                        className="rounded-xl"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Betreff *</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        placeholder="Projektanfrage"
-                        value={form.subject}
-                        onChange={handleChange}
-                        className="rounded-xl"
-                      />
-                    </div>
-                  </div>
+              <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <Label htmlFor="message">Nachricht *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Beschreiben Sie Ihr Anliegen..."
-                      rows={6}
-                      value={form.message}
+                    <Label htmlFor="name">Name *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Max Mustermann"
+                      value={form.name}
                       onChange={handleChange}
                       className="rounded-xl"
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-200"
-                  >
-                    Nachricht senden
-                    <Send size={16} />
-                  </button>
-                </form>
-              </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">E-Mail *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="max@beispiel.de"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="rounded-xl"
+                    />
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Telefon</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+49 123 456 789"
+                      value={form.phone}
+                      onChange={handleChange}
+                      className="rounded-xl"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Betreff *</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      placeholder="Projektanfrage"
+                      value={form.subject}
+                      onChange={handleChange}
+                      className="rounded-xl"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Nachricht *</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Beschreiben Sie Ihr Anliegen..."
+                    rows={6}
+                    value={form.message}
+                    onChange={handleChange}
+                    className="rounded-xl"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-blue text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-200"
+                >
+                  Nachricht senden
+                  <Send size={16} />
+                </button>
+              </form>
             </div>
 
             {/* Contact info sidebar */}
-            <div className={`lg:col-span-2 scroll-hidden delay-2 ${isVisible ? 'scroll-visible' : ''}`}>
-              <div className="space-y-5">
+            <div className={`w-full lg:w-80 shrink-0 scroll-hidden delay-2 ${isVisible ? 'scroll-visible' : ''}`}>
+              <div className="lg:sticky lg:top-28 space-y-5">
                 {contactInfo.map((item) => {
                   const Icon = item.icon;
                   const Wrapper = item.href ? 'a' : 'div';
@@ -166,7 +164,7 @@ const Kontakt = () => {
                     <Wrapper
                       key={item.label}
                       {...(item.href ? { href: item.href } : {})}
-                      className="flex items-start gap-4 p-5 rounded-2xl border border-border/60 bg-white hover:border-primary/20 hover:shadow-md transition-all duration-300"
+                      className="flex items-start gap-4 p-5 rounded-2xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-md transition-all duration-300"
                     >
                       <div className="w-11 h-11 rounded-xl bg-gradient-blue flex items-center justify-center shrink-0">
                         <Icon size={20} className="text-primary-foreground" />
@@ -178,14 +176,6 @@ const Kontakt = () => {
                     </Wrapper>
                   );
                 })}
-              </div>
-
-              {/* Map placeholder */}
-              <div className="mt-6 rounded-2xl border border-border/60 bg-muted/30 h-48 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin size={28} className="text-muted-foreground/40 mx-auto mb-2" />
-                  <p className="text-sm text-muted-foreground">Karte — München, Deutschland</p>
-                </div>
               </div>
             </div>
           </div>
