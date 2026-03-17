@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 const PageHero = ({ title, highlight, subtitle, breadcrumb }: PageHeroProps) => {
   return (
-    <section className="relative pt-36 pb-20 overflow-hidden hero-gradient">
+    <section className="relative pt-28 md:pt-36 pb-14 md:pb-20 overflow-hidden hero-gradient">
       {/* Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.07] blur-[100px] animate-orb" />
