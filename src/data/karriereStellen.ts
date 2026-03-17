@@ -102,7 +102,7 @@ export const stellen: Stelle[] = [
   },
   {
     slug: 'devops-engineer',
-    titel: 'DevOps Engineer',
+    titel: 'Mitarbeiter (m/w/d) für DevOps & Cloud-Infrastruktur',
     standort: 'Düsseldorf',
     modell: 'Remote',
     kurzbeschreibung: 'Baue und optimiere unsere Cloud-Infrastruktur und CI/CD-Pipelines.',
