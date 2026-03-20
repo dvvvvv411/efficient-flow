@@ -24,6 +24,12 @@ const teamMembers = [
     image: thomasWeber,
   },
   {
+    name: 'Thomas Papst',
+    role: 'Geschäftsführer / CEO',
+    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und treibt Innovation und Wachstum voran.',
+    image: danielKrause,
+  },
+  {
     name: 'Laura Schneider',
     role: 'Head of Software Engineering',
     description: 'Leitet unser Entwicklungsteam mit Leidenschaft für Clean Code und skalierbare Architekturen.',
@@ -40,12 +46,6 @@ const teamMembers = [
     role: 'Business Consultant',
     description: 'Verbindet betriebswirtschaftliches Know-how mit technologischem Verständnis für optimale Beratungsergebnisse.',
     image: juliaWagner,
-  },
-  {
-    name: 'Thomas Papst',
-    role: 'Geschäftsführer / CEO',
-    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und treibt Innovation und Wachstum voran.',
-    image: danielKrause,
   },
   {
     name: 'Anna Hoffmann',
