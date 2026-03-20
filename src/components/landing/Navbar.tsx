@@ -95,7 +95,7 @@ const Navbar = () => {
 
             {/* Logo zentriert, transparent */}
             <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-              <img src={logo} alt="EfficientFlow" loading="eager" fetchPriority="high" className="h-8 hover:scale-105 transition-transform duration-200" />
+              <img src={logo} alt="Efficient Flow" loading="eager" fetchPriority="high" className="h-8 hover:scale-105 transition-transform duration-200" />
             </Link>
           </div>
         </div>
