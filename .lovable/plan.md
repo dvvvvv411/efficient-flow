@@ -1,42 +1,37 @@
 
 
-# Favicon für Google + Sitemap erstellen
+# Änderungen: "Efficient Flow" + Team-Umbenennungen
 
-## 1. `index.html` — Favicon-Tags erweitern
+## 1. "EfficientFlow" → "Efficient Flow" (mit Leerzeichen)
 
-Aktuelle Einbindung (nur eine Zeile) durch Google-konforme Variante ersetzen:
+Betrifft 11 Dateien, ca. 20 Textstellen (ohne Logo-`alt`-Attribute, die bleiben):
 
-```html
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-```
+| Datei | Stellen |
+|---|---|
+| `index.html` | title, og:title |
+| `src/pages/Index.tsx` | document.title |
+| `src/pages/Leistungen.tsx` | document.title |
+| `src/pages/Methodik.tsx` | document.title |
+| `src/pages/Team.tsx` | subtitle, Jonas-Beschreibung |
+| `src/pages/Karriere.tsx` | highlight-Text |
+| `src/components/landing/Testimonials.tsx` | Zitat-Text |
+| `src/components/landing/FAQ.tsx` | Frage-Text |
+| `src/components/landing/Navbar.tsx` | 3× alt-Attribute |
+| `src/components/landing/Footer.tsx` | alt-Attribut |
+| `src/components/landing/HeroSection.tsx` | URL-Anzeige (app.efficientflow → ggf. beibehalten als Domain) |
 
-Google verlangt **mindestens 48×48 px** und bevorzugt mehrere `sizes`-Angaben. Falls die aktuelle `favicon.png` kleiner als 48×48 ist, muss sie durch eine größere Version ersetzt werden — bitte prüfen.
+Die HeroSection-URL (`app.efficientflow.solutions/...`) bleibt unverändert, da es sich um eine Domain-Darstellung handelt.
 
-## 2. `public/sitemap.xml` — Neu erstellen
+## 2. Team-Seite: Namensänderungen
 
-Domain: `https://efficient-flow.solutions`
+In `src/pages/Team.tsx`:
 
-Alle Routen aus `App.tsx`:
-- `/`
-- `/leistungen`
-- `/software`
-- `/methodik`
-- `/team`
-- `/kontakt`
-- `/impressum`
-- `/datenschutz`
-- `/karriere`
+- **"Dr. Thomas Weber"** → **"Ulrich Papst"** (Zeile 21), Rolle bleibt "Geschäftsführer / CEO"
+- **"Daniel Krause"** → **"Thomas Papst"** (Zeile 45), Rolle ändern zu **"Geschäftsführer / CEO"**, Beschreibung anpassen (nicht mehr Backend Developer)
 
-## 3. `public/robots.txt` — Sitemap-Verweis ergänzen
+Neue Beschreibung für Thomas Papst z.B.: "Führt das Unternehmen gemeinsam mit seinem Vater und treibt Innovation und Wachstum voran."
 
-Am Ende hinzufügen:
-```
-Sitemap: https://efficient-flow.solutions/sitemap.xml
-```
-
-## Hinweis
-Nach Deployment dauert es einige Wochen, bis Google das Favicon in den Suchergebnissen aktualisiert. Die Änderungen sorgen dafür, dass alle technischen Voraussetzungen erfüllt sind.
+## Zusammenfassung
+- ~20 Textersetzungen "EfficientFlow" → "Efficient Flow" in 10 Dateien
+- 2 Namens-/Rollenänderungen auf der Team-Seite
 
