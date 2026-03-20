@@ -18,7 +18,7 @@ import sebastianRichter from '@/assets/team/sebastian-richter.jpg';
 
 const teamMembers = [
   {
-    name: 'Dr. Thomas Weber',
+    name: 'Ulrich Papst',
     role: 'Geschäftsführer / CEO',
     description: 'Visionär mit über 20 Jahren Erfahrung in der digitalen Transformation und strategischen Unternehmensführung.',
     image: thomasWeber,
@@ -42,9 +42,9 @@ const teamMembers = [
     image: juliaWagner,
   },
   {
-    name: 'Daniel Krause',
-    role: 'Senior Backend Developer',
-    description: 'Experte für performante APIs, Datenbanken und serverlose Infrastrukturen.',
+    name: 'Thomas Papst',
+    role: 'Geschäftsführer / CEO',
+    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und treibt Innovation und Wachstum voran.',
     image: danielKrause,
   },
   {
@@ -68,7 +68,7 @@ const teamMembers = [
   {
     name: 'Jonas Hartmann',
     role: 'Recruiter',
-    description: 'Findet die besten Köpfe der Branche und begleitet sie auf ihrem Weg zu EfficientFlow.',
+    description: 'Findet die besten Köpfe der Branche und begleitet sie auf ihrem Weg zu Efficient Flow.',
     image: jonasHartmann,
   },
   {
@@ -97,7 +97,7 @@ const Team = () => {
       <PageHero
         title="Unser"
         highlight="Team"
-        subtitle="Die Menschen hinter EfficientFlow — Expert:innen mit Leidenschaft für digitale Exzellenz."
+        subtitle="Die Menschen hinter Efficient Flow — Expert:innen mit Leidenschaft für digitale Exzellenz."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Team' },
