@@ -9,6 +9,7 @@ export interface Stelle {
   voraussetzungen: string[];
   benefits: string[];
   arbeitszeit?: string;
+  stundenlohn?: string;
 }
 
 export const stellen: Stelle[] = [
@@ -18,6 +19,7 @@ export const stellen: Stelle[] = [
     standort: 'Düsseldorf',
     modell: 'Remote / Minijob / Teilzeit',
     arbeitszeit: 'Flexibel (ca. 5–30 Std./Woche)',
+    stundenlohn: '29 €',
     kurzbeschreibung: 'Teste digitale Anwendungen remote und halte deine Eindrücke strukturiert fest – flexibel und ohne Vorkenntnisse.',
     beschreibung: 'Du bist regelmäßig online unterwegs und achtest darauf, ob Webseiten oder Apps gut funktionieren? Dann könnte diese Tätigkeit gut zu dir passen. Zur Unterstützung suchen wir Personen, die digitale Anwendungen testen und ihre Eindrücke strukturiert festhalten. Die Aufgaben sind einfach gehalten und werden verständlich erklärt – Vorkenntnisse sind nicht erforderlich.',
     aufgaben: [

@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { MapPin, Clock, Timer, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
+import { MapPin, Clock, Timer, Euro, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
 
 import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
@@ -108,6 +108,17 @@ const KarriereDetail = () => {
                       <div>
                         <p className="text-xs text-muted-foreground">Arbeitszeit</p>
                         <p className="text-sm font-medium text-foreground">{stelle.arbeitszeit}</p>
+                      </div>
+                    </div>
+                  )}
+                  {stelle.stundenlohn && (
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <Euro size={16} className="text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Stundenlohn</p>
+                        <p className="text-sm font-medium text-foreground">{stelle.stundenlohn}</p>
                       </div>
                     </div>
                   )}
