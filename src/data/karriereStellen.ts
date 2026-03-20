@@ -9,6 +9,7 @@ export interface Stelle {
   voraussetzungen: string[];
   benefits: string[];
   arbeitszeit?: string;
+  stundenlohn?: string;
 }
 
 export const stellen: Stelle[] = [
