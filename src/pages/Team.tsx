@@ -68,7 +68,7 @@ const teamMembers = [
   {
     name: 'Jonas Hartmann',
     role: 'Recruiter',
-    description: 'Findet die besten Köpfe der Branche und begleitet sie auf ihrem Weg zu EfficientFlow.',
+    description: 'Findet die besten Köpfe der Branche und begleitet sie auf ihrem Weg zu Efficient Flow.',
     image: jonasHartmann,
   },
   {
