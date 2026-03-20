@@ -42,9 +42,9 @@ const teamMembers = [
     image: juliaWagner,
   },
   {
-    name: 'Daniel Krause',
-    role: 'Senior Backend Developer',
-    description: 'Experte für performante APIs, Datenbanken und serverlose Infrastrukturen.',
+    name: 'Thomas Papst',
+    role: 'Geschäftsführer / CEO',
+    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und treibt Innovation und Wachstum voran.',
     image: danielKrause,
   },
   {
