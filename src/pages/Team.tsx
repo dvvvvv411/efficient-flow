@@ -18,7 +18,7 @@ import sebastianRichter from '@/assets/team/sebastian-richter.jpg';
 
 const teamMembers = [
   {
-    name: 'Dr. Thomas Weber',
+    name: 'Ulrich Papst',
     role: 'Geschäftsführer / CEO',
     description: 'Visionär mit über 20 Jahren Erfahrung in der digitalen Transformation und strategischen Unternehmensführung.',
     image: thomasWeber,
