@@ -97,7 +97,7 @@ const Team = () => {
       <PageHero
         title="Unser"
         highlight="Team"
-        subtitle="Die Menschen hinter EfficientFlow — Expert:innen mit Leidenschaft für digitale Exzellenz."
+        subtitle="Die Menschen hinter Efficient Flow — Expert:innen mit Leidenschaft für digitale Exzellenz."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Team' },

@@ -119,7 +119,7 @@ const Navbar = () => {
           {/* Header */}
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border/40">
             <Link to="/" onClick={() => setMobileOpen(false)}>
-              <img src={logo} alt="EfficientFlow" className="h-8" />
+              <img src={logo} alt="Efficient Flow" className="h-8" />
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
